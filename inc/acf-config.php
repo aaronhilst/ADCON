@@ -20,7 +20,16 @@ function my_acf_init() {
     // check function exists
     if( function_exists('acf_register_block') ) {
 
-        // register a testimonial block
+        acf_register_block(array(
+            'name'				=> 'heading_plus_paragraph',
+            'title'				=> __('Heading + Paragraph(s)'),
+            'description'		=> __('.'),
+            'render_callback'	=> 'my_acf_block_render_callback',
+            'category'			=> 'formatting',
+            'icon'				=> 'admin-comments',
+            'keywords'			=> array( 'ADCON' ),
+        ));
+
         acf_register_block(array(
             'name'				=> 'testimonials_section',
             'title'				=> __('Testimonials Section'),
@@ -28,10 +37,9 @@ function my_acf_init() {
             'render_callback'	=> 'my_acf_block_render_callback',
             'category'			=> 'formatting',
             'icon'				=> 'admin-comments',
-            'keywords'			=> array( 'testimonials', 'quote' ),
+            'keywords'			=> array( 'ADCON' ),
         ));
 
-        // register a testimonial block
         acf_register_block(array(
             'name'				=> 'about_us_bulleted_list',
             'title'				=> __('About Us Bulleted List'),
@@ -39,10 +47,49 @@ function my_acf_init() {
             'render_callback'	=> 'my_acf_block_render_callback',
             'category'			=> 'formatting',
             'icon'				=> 'admin-comments',
-            'keywords'			=> array( 'testimonials', 'quote' ),
+            'keywords'			=> array( 'ADCON' ),
         ));
 
-        // register a testimonial block
+        acf_register_block(array(
+            'name'				=> 'about_us_picture_list',
+            'title'				=> __('About Us Picture List'),
+            'description'		=> __('A custom about us picture list.'),
+            'render_callback'	=> 'my_acf_block_render_callback',
+            'category'			=> 'formatting',
+            'icon'				=> 'admin-comments',
+            'keywords'			=> array( 'ADCON' ),
+        ));
+
+        acf_register_block(array(
+            'name'				=> 'about_us_large_testimonial',
+            'title'				=> __('About Us Large Testimonial'),
+            'description'		=> __('A large testimonial.'),
+            'render_callback'	=> 'my_acf_block_render_callback',
+            'category'			=> 'formatting',
+            'icon'				=> 'admin-comments',
+            'keywords'			=> array( 'ADCON' ),
+        ));
+
+        acf_register_block(array(
+            'name'				=> 'about_us_expandable_testimonials',
+            'title'				=> __('About Us Expanding Testimonials'),
+            'description'		=> __('Set of testimonials, any of which can expand.'),
+            'render_callback'	=> 'my_acf_block_render_callback',
+            'category'			=> 'formatting',
+            'icon'				=> 'admin-comments',
+            'keywords'			=> array( 'ADCON' ),
+        ));
+
+        acf_register_block(array(
+            'name'				=> 'owners_list',
+            'title'				=> __('Owners List'),
+            'description'		=> __('List of company owners.'),
+            'render_callback'	=> 'my_acf_block_render_callback',
+            'category'			=> 'formatting',
+            'icon'				=> 'admin-comments',
+            'keywords'			=> array( 'ADCON' ),
+        ));
+
         acf_register_block(array(
             'name'				=> 'team_list',
             'title'				=> __('Team List'),
@@ -50,10 +97,9 @@ function my_acf_init() {
             'render_callback'	=> 'my_acf_block_render_callback',
             'category'			=> 'formatting',
             'icon'				=> 'admin-comments',
-            'keywords'			=> array( 'testimonials', 'quote' ),
+            'keywords'			=> array( 'ADCON' ),
         ));
 
-        // register a testimonial block
         acf_register_block(array(
             'name'				=> 'projects_list',
             'title'				=> __('Projects List'),
@@ -61,10 +107,9 @@ function my_acf_init() {
             'render_callback'	=> 'my_acf_block_render_callback',
             'category'			=> 'formatting',
             'icon'				=> 'admin-comments',
-            'keywords'			=> array( 'testimonials', 'quote' ),
+            'keywords'			=> array( 'ADCON' ),
         ));
 
-        // register a testimonial block
         acf_register_block(array(
             'name'				=> 'homepage_intro_section',
             'title'				=> __('Homepage Intro Section'),
@@ -72,10 +117,9 @@ function my_acf_init() {
             'render_callback'	=> 'my_acf_block_render_callback',
             'category'			=> 'formatting',
             'icon'				=> 'admin-comments',
-            'keywords'			=> array( 'testimonials', 'quote' ),
+            'keywords'			=> array( 'ADCON' ),
         ));
 
-        // register a testimonial block
         acf_register_block(array(
             'name'				=> 'homepage_industries_section',
             'title'				=> __('Homepage Industries Section'),
@@ -83,10 +127,19 @@ function my_acf_init() {
             'render_callback'	=> 'my_acf_block_render_callback',
             'category'			=> 'formatting',
             'icon'				=> 'admin-comments',
+            'keywords'			=> array( 'ADCON' ),
+        ));
+
+        acf_register_block(array(
+            'name'				=> 'services_header',
+            'title'				=> __('Services Header'),
+            'description'		=> __('Services page header.'),
+            'render_callback'	=> 'my_acf_block_render_callback',
+            'category'			=> 'formatting',
+            'icon'				=> 'admin-comments',
             'keywords'			=> array( 'testimonials', 'quote' ),
         ));
 
-        // register a testimonial block
         acf_register_block(array(
             'name'				=> 'services_section',
             'title'				=> __('Services Section'),

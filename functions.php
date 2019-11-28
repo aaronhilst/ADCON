@@ -10,6 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $understrap_includes = array(
+	'/post-types.php',                  // Initialize theme default settings.
 	'/theme-settings.php',                  // Initialize theme default settings.
 	'/setup.php',                           // Theme setup and custom theme supports.
 	'/widgets.php',                         // Register widget area.
@@ -52,4 +53,15 @@ function GetCustomPreviewOrFeaturedImageAtSize($postId, $size){
     }
 
     return GetFeaturedImageAtSize($postId, $size);
+}
+
+
+add_filter( 'wp_nav_menu_items', 'your_custom_menu_item', 10, 2 );
+function your_custom_menu_item ( $items, $args ) {
+    if ($args->theme_location == 'primary') {
+        $items .= '<li>' .
+        '<a class="social" href="' . get_field('facebook_link', 'option') . '" target="_blank"><i class="fa fa-facebook-square"></i></a> ' .
+            '<a class="social" href="' . get_field('instagram_link', 'option') . '" target="_blank"><i class="fa fa-instagram"></i></a></li>';
+    }
+    return $items;
 }

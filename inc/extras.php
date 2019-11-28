@@ -130,3 +130,15 @@ function understrap_mobile_web_app_meta() {
 	echo '<meta name="apple-mobile-web-app-title" content="' . esc_attr( get_bloginfo( 'name' ) ) . ' - ' . esc_attr( get_bloginfo( 'description' ) ) . '">' . "\n";
 }
 add_action( 'wp_head', 'understrap_mobile_web_app_meta' );
+
+$GLOBALS['have_set_h1'] = false;
+
+function h1_or_h2($text){
+    if ($GLOBALS['have_set_h1']){
+        echo "<h2 class='left-stripe'>$text</h2>";
+    }
+    else{
+        echo "<h1 class='left-stripe'>$text</h1>";
+        $GLOBALS['have_set_h1'] = true;
+    }
+}

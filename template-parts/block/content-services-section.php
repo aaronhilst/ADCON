@@ -1,30 +1,34 @@
 <?php
-/**
- * Block Name: Testimonial
- *
- * This is the template that displays the testimonial block.
- */
+if (get_field('heading_text') == null && get_field('paragraph_text') == null && get_field('icon_image') == null ){
+    echo "<div style='height: 50px;'>[Services Section]</div>";
+}
 
-// get image field (array)
-$avatar = get_field('avatar');
 
-// create id attribute for specific styling
-$id = 'testimonial-' . $block['id'];
+$dotted_class = get_field('hide_bottom_border') ? "" : "dotted-spaced";
+$imgurl = GetImageAtSize(get_field('icon_image'), "full");
+$svgurl = get_field('svg_path');
 
-// create align class ("alignwide") from block setting ("wide")
-$align_class = $block['align'] ? 'align' . $block['align'] : '';
+
 
 ?>
-<blockquote id="<?php echo $id; ?>" class="testimonial <?php echo $align_class; ?>">
-    <p><?php the_field('testimonial'); ?></p>
-    <cite>
-        <img src="<?php echo $avatar['url']; ?>" alt="<?php echo $avatar['alt']; ?>" />
-        <span><?php the_field('author'); ?></span>
-    </cite>
-</blockquote>
-<style type="text/css">
-    #<?php echo $id; ?> {
-        background: <?php the_field('background_color'); ?>;
-        color: <?php the_field('text_color'); ?>;
-    }
-</style>
+<div class="container content-services-section <?= $dotted_class ?>">
+    <div class="row">
+        <div class="col-12 offset-lg-1 col-lg-7 order-1">
+            <?php h1_or_h2(get_field('heading_text')); ?>
+        </div>
+        <div class="col-12 col-lg-3 order-3 order-lg-2 icon-image-container">
+            <?php
+                if ($imgurl):
+            ?>
+                <img src="<?= $imgurl ?>" alt="<?= get_field('heading_text') ?>"/>
+            <?php
+                else:
+            ?>
+                <img src="<?= $svgurl ?>" alt="<?= get_field('heading_text') ?>"/>
+            <?php endif; ?>
+        </div>
+        <div class="col-12 offset-lg-2 col-lg-6 order-2 order-lg-3">
+            <?= get_field('paragraph_text') ?>
+        </div>
+    </div>
+</div>

@@ -2,6 +2,16 @@
 // To overwrite a Bootstrap variable you don´t have to touch the Bootstrap folder.
 // Just copy a variable from src/sass/bootstrap4/_variables.scss, paste it here and edit the value.
 
+$primary-font: 'AvenirNextLTPro', 'Lato', sans-serif;
+$primary-font-300: 'AvenirNextLTPro-Regular', 'Lato', sans-serif;
+$primary-font-400: 'AvenirNextLTPro-Medium', 'Lato', sans-serif;
+$primary-font-700: 'AvenirNextLTPro-Demi', 'Lato', sans-serif;
+$primary-font-900: 'AvenirNextLTPro-Bold', 'Lato', sans-serif;
+$primary-font-300-ital: 'AvenirNextLTPro-RegularIt', 'Lato', sans-serif;
+$primary-font-400-ital: 'AvenirNextLTPro-MediumIt', 'Lato', sans-serif;
+$primary-font-700-ital: 'AvenirNextLTPro-DemiIt', 'Lato', sans-serif;
+$primary-font-900-ital: 'AvenirNextLTPro-BoldIt', 'Lato', sans-serif;
+$default-font-size: 19px;
 
 $primary: #5533ff; // Thats a sample how you could change a BootStrap variable.
 
@@ -9,43 +19,57 @@ $gold: #f19723;
 $navy: #141e28;
 $white: #ffffff;
 $black: #000000;
+$lightgray: #e1e2e2;
+$controlsgray: #d0d2d3;
+$darkgray: #898B8D;
+
+$headings-font-family: $primary-font-700;
 
 $sub-section-spacing: 45px;
 $section-spacing: 55px;
-$paragraph-spacing: 25px;
+$paragraph-spacing: 35px;
 $grid-spacing: 30px;
 $grid-half-spacing: 15px;
+$footer-top-bottom-padding: 40px;
 
-$header-height: 125px;
+$header-height: 110px;
+$header-mobile-height: 80px;
 
-$footer-height: 300px;
 $footer-bottom-padding: 130px;
 $footer-top-padding: 45px;
+$footer-vertical-offset: 100px;
 
 $limited-break-container-width: 1600px;
 
 
 %font-heading{
-  font-family: 'Lato', sans-serif;
+  font-family: $primary-font;
   font-weight: 700;
   font-size: 20px;
   color: $black;
 }
 
 %font-paragraph{
-  font-family: 'Lato', sans-serif;
+  font-family: $primary-font;
   font-weight: 400;
-  font-size: 16px;
+  font-size: $default-font-size;
   color: $black;
 }
 
 %font-paragraph-bold{
   @extend %font-paragraph;
+  font-family: $primary-font;
   font-weight: 900;
 }
 
+%font-paragraph-semi-bold{
+  @extend %font-paragraph;
+  font-family: $primary-font;
+  font-weight: 700;
+}
+
 %font-label{
-  font-family: 'Lato', sans-serif;
+  font-family: $primary-font;
   font-weight: 300;
   font-size: 15px;
   color: $white;
