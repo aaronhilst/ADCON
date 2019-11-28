@@ -1,0 +1,53 @@
+// Use this file to overwrite the basic Bootstrap variables and add your own variables
+// To overwrite a Bootstrap variable you don´t have to touch the Bootstrap folder.
+// Just copy a variable from src/sass/bootstrap4/_variables.scss, paste it here and edit the value.
+
+
+$primary: #5533ff; // Thats a sample how you could change a BootStrap variable.
+
+$gold: #f19723;
+$navy: #141e28;
+$white: #ffffff;
+$black: #000000;
+
+$sub-section-spacing: 45px;
+$section-spacing: 55px;
+$paragraph-spacing: 25px;
+$grid-spacing: 30px;
+$grid-half-spacing: 15px;
+
+$header-height: 125px;
+
+$footer-height: 300px;
+$footer-bottom-padding: 130px;
+$footer-top-padding: 45px;
+
+$limited-break-container-width: 1600px;
+
+
+%font-heading{
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: $black;
+}
+
+%font-paragraph{
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: $black;
+}
+
+%font-paragraph-bold{
+  @extend %font-paragraph;
+  font-weight: 900;
+}
+
+%font-label{
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  color: $white;
+}
+
